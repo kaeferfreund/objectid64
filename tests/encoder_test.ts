@@ -1,4 +1,4 @@
-import { ObjectId64 as Encoder } from "../encoder.ts";
+import { Encoder } from "../encoder.ts";
 import { assertEquals } from "./test_deps.ts";
 
 const { test } = Deno;

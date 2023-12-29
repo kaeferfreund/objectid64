@@ -1,6 +1,6 @@
 {
   "name": "oid64",
-  "version": "3.2.1",
+  "version": "5.2.1",
   "main": "./encoder.js",
   "type": "module",
   "description": "ES6 compatible. The fastest way to convert ids, UUID, MongoDB ObjectId into shorter, URL-friendly base64 and vice versa.",

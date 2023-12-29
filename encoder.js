@@ -3,7 +3,7 @@ const defaultBase = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
  * Encodes and decodes UUIDs, ObjectIds,
  * as well as simple numbers and bigints to and from base64.
  */
-export { Encoder as ObjectId64 };
+export { Encoder };
 class Encoder {
     static initialize(base, baseToHex, hexToBase) {
         for (let i = 0; i < 4096; i += 1) {

@@ -5,7 +5,7 @@ const defaultBase =
  * Encodes and decodes UUIDs, ObjectIds,
  * as well as simple numbers and bigints to and from base64.
  */
-export { Encoder as ObjectId64 };
+export { Encoder };
 class Encoder {
   /**
    * The the default set of characters for base64
