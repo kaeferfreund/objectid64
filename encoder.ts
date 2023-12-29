@@ -5,7 +5,8 @@ const defaultBase =
  * Encodes and decodes UUIDs, ObjectIds,
  * as well as simple numbers and bigints to and from base64.
  */
-export class Encoder {
+export { Encoder as ObjectId64 };
+class Encoder {
   /**
    * The the default set of characters for base64
    */
@@ -27,7 +28,7 @@ export class Encoder {
     hexToBase: Map<string, string>,
   ): void {
     for (let i = 0; i < 4096; i += 1) {
-      const hex = i.toString(16).padStart(3, "0");
+      const hex = padStart(i.toString(16), 3, "0");
       const base64 = base[i >> 6] + base[i & 63];
       hexToBase.set(hex, base64);
       baseToHex.set(base64, hex);
@@ -48,6 +49,8 @@ export class Encoder {
       );
     }
   }
+
+
 
   /**
    * Encodes a given ObjectId hex string into a base64 string.
@@ -256,13 +259,13 @@ export class Encoder {
    * @param integer the bigint to encode
    * @returns encoded base64 string
    */
-  fromBigInt(integer: bigint): string {
-    let encoded = "";
-    for (let n = integer; n > 0n; n >>= 6n) {
-      encoded = this.base[Number(n & 63n)] + encoded;
-    }
-    return encoded;
-  }
+  // fromBigInt(integer: bigint): string {
+  //   let encoded = "";
+  //   for (let n = integer; n > 0n; n >>= 6n) {
+  //     encoded = this.base[Number(n & 63n)] + encoded;
+  //   }
+  //   return encoded;
+  // }
 
   /**
    * Decodes a given base64 string into a bigint.
@@ -270,11 +273,24 @@ export class Encoder {
    * @param id the base64 string to decode
    * @returns decoded bigint
    */
-  toBigInt(id: string): bigint {
-    let n = 0n;
-    for (let i = 0; i < id.length; i++) {
-      n = (n << 6n) + BigInt(this.base.indexOf(id[i]));
-    }
-    return n;
+//   toBigInt(id: string): bigint {
+//     let n = 0n;
+//     for (let i = 0; i < id.length; i++) {
+//       n = (n << 6n) + BigInt(this.base.indexOf(id[i]));
+//     }
+//     return n;
+//   }
+}
+
+function padStart(str: string, targetLength: number, padString: string = ' '): string {
+  if (str.length >= targetLength) {
+      return str;
+  } else {
+      targetLength = targetLength - str.length;
+      if (targetLength > padString.length) {
+          padString += padString.repeat(targetLength/padString.length);
+      }
+      return padString.slice(0, targetLength) + str;
   }
 }
+

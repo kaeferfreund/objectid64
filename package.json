@@ -1,9 +1,9 @@
 {
-  "name": "objectid64",
+  "name": "oid64",
   "version": "3.2.1",
-  "main": "./esm/mod.js",
+  "main": "./encoder.js",
   "type": "module",
-  "description": "The fastest way to convert ids, UUID, MongoDB ObjectId into shorter, URL-friendly base64 and vice versa.",
+  "description": "ES6 compatible. The fastest way to convert ids, UUID, MongoDB ObjectId into shorter, URL-friendly base64 and vice versa.",
   "keywords": [
     "uuid",
     "objectid",
@@ -15,15 +15,15 @@
     "shorten",
     "mongodb"
   ],
-  "author": "Maga D. Zandaqo <denelxan@gmail.com> (http://maga.name)",
+  "author": "Manuel Cargnel (original Author Maga D. Zandaqo)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zandaqo/objectid64.git"
+    "url": "https://github.com/kaeferfreund/objectid64.git"
   },
-  "homepage": "https://github.com/zandaqo/objectid64#readme",
+  "homepage": "https://github.com/kaeferfreund/objectid64#readme",
   "bugs": {
-    "url": "https://github.com/zandaqo/objectid64/issues"
+    "url": "https://github.com/kaeferfreund/objectid64/issues"
   },
   "engines": {
     "node": ">=16.0.0"

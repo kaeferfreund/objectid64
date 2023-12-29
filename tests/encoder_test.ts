@@ -1,5 +1,5 @@
+import { ObjectId64 as Encoder } from "../encoder.ts";
 import { assertEquals } from "./test_deps.ts";
-import { Encoder } from "../encoder.ts";
 
 const { test } = Deno;
 const defaultEncoder = new Encoder();
@@ -254,17 +254,17 @@ test("[Encoder#toBinUUID] decodes a base64 string into a UUID", () => {
   }
 });
 
-test("[Encoder#fromBigInt] encodes a bigint into base64", () => {
-  for (const id of objectIds) {
-    assertEquals(defaultEncoder.fromBigInt(id[2]), id[1]);
-  }
-});
+// test("[Encoder#fromBigInt] encodes a bigint into base64", () => {
+//   for (const id of objectIds) {
+//     assertEquals(defaultEncoder.fromBigInt(id[2]), id[1]);
+//   }
+// });
 
-test("[Encoder#toBigInt] decodes a base64 string into a bigint", () => {
-  for (const id of objectIds) {
-    assertEquals(defaultEncoder.toBigInt(id[1]), id[2]);
-  }
-});
+// test("[Encoder#toBigInt] decodes a base64 string into a bigint", () => {
+//   for (const id of objectIds) {
+//     assertEquals(defaultEncoder.toBigInt(id[1]), id[2]);
+//   }
+// });
 
 test("[Encoder#fromInt] encodes an integer into base64", () => {
   for (const id of ints) {
